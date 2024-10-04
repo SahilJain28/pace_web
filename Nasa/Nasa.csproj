@@ -71,8 +71,11 @@
     <Content Include="Content\Satellite.jpeg" />
     <Content Include="Content\Style.css" />
     <Content Include="Create.aspx" />
+    <Content Include="data-visualization.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="explorer.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="virtual-labs.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -83,12 +86,26 @@
     <Compile Include="Create.aspx.designer.cs">
       <DependentUpon>Create.aspx</DependentUpon>
     </Compile>
+    <Compile Include="data-visualization.aspx.cs">
+      <DependentUpon>data-visualization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="data-visualization.aspx.designer.cs">
+      <DependentUpon>data-visualization.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="explorer.aspx.cs">
+      <DependentUpon>explorer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="explorer.aspx.designer.cs">
+      <DependentUpon>explorer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -104,6 +121,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="virtual-labs.aspx.cs">
+      <DependentUpon>virtual-labs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="virtual-labs.aspx.designer.cs">
+      <DependentUpon>virtual-labs.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

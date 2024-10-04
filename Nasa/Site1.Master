@@ -32,6 +32,10 @@
             text-decoration: none;
         }
 
+        .header nav a:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+
         /* Sidebar styles */
         .sidebar {
             height: 100%;
@@ -43,6 +47,13 @@
             overflow-x: hidden;
             transition: 0.3s;
             padding-top: 60px;
+        }
+
+        .sidebar img {
+            width: 150px; /* Image size in the sidebar */
+            margin: 0 auto;
+            display: block;
+            padding-bottom: 20px;
         }
 
         .sidebar a {
@@ -74,16 +85,48 @@
             padding: 20px;
         }
 
-        /* Hamburger icon (3-line icon) */
+        .hamburger-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Hamburger icon */
         .hamburger {
             font-size: 30px;
             cursor: pointer;
             color: white;
+            margin-right: 10px; /* Space between Hamburger icon and image */
+        }
+
+        /* Image next to the Hamburger icon */
+        .hamburger-img {
+            width: 45px;
+            height: 30px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #0a1f44;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         @media screen and (max-height: 450px) {
-            .sidebar {padding-top: 15px;}
-            .sidebar a {font-size: 18px;}
+            .sidebar { padding-top: 15px; }
+            .sidebar a { font-size: 18px; }
         }
     </style>
 </head>
@@ -91,28 +134,43 @@
     <form id="form1" runat="server">
         <!-- Header Section -->
         <header class="header">
-            <!-- Hamburger icon to toggle sidebar -->
-            <span class="hamburger" onclick="openNav()">&#9776;</span>
+            <!-- Hamburger icon and image -->
+            <div class="hamburger-container">
+                <!-- Hamburger icon and image -->
+                <span class="hamburger" onclick="openNav()">&#9776;</span>
+                <img src="Content/Logo.png" alt="Icon Image" class="hamburger-img" />
+            </div>
             <nav>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+                <a href="Default.aspx" class="hover:underline cursor-pointer">Home</a>
+                <a href="data-visualization.aspx" class="hover:underline cursor-pointer">Data Visualization Tool</a>
+                <a href="virtual-labs.aspx" class="hover:underline cursor-pointer">Virtual Labs</a>
+                <a href="explorer.aspx" class="hover:underline cursor-pointer">Explorer</a>
+                <a href="Login.aspx" class="hover:underline cursor-pointer">Login/Signup</a>
             </nav>
         </header>
 
         <!-- Sidebar Section -->
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="Login.aspx">Login</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            <a href="#">Link 4</a>
+            <img src="Content/Logo.png" alt="Sidebar Image" />
+            <a href="data-visualization.aspx">Data Visualization Tool</a>
+            <a href="virtual-labs.aspx">Virtual Labs</a>
+            <a href="explorer.aspx" class="hover:underline cursor-pointer">Explorer</a>
+            <a href="Login.aspx" class="hover:underline cursor-pointer">Login/Signup</a>
         </div>
 
         <!-- Main content section -->
         <div id="main" class="content-area">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
         </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="container mx-auto text-center">
+                <p>© 2024 NASA PACE Explorer | Powered by NASA's Earth Science Division</p>
+                <a href="https://www.nasa.gov/">Visit NASA's Official Website</a>
+            </div>
+        </footer>
 
         <!-- JavaScript for the sidebar toggle -->
         <script>
