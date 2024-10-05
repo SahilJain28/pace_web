@@ -43,7 +43,7 @@
             font-size: 14px;
             margin: 20px 0;
         }
-        .container input[type="text"] {
+        .textbox {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -65,7 +65,7 @@
             align-items: center;
             margin-top: 20px;
         }
-        .container .actions button {
+        .button {
             background-color: #1a73e8;
             color: #fff;
             border: none;
@@ -74,7 +74,7 @@
             font-size: 14px;
             cursor: pointer;
         }
-        .container .actions button:hover {
+        .button:hover {
             background-color: #1558b0;
         }
         .footer {
@@ -100,8 +100,12 @@
             <h1>Sign in</h1>
             <p>Use your Google Account</p>
 
-            <!-- ASP.NET TextBox control for user input -->
-            <asp:TextBox ID="txtEmailPhone" runat="server" placeholder="Email or phone"></asp:TextBox>
+            <!-- ASP.NET TextBox control for email or phone -->
+            <asp:TextBox class="textbox" ID="txtEmailPhone" runat="server" placeholder="Email or phone"></asp:TextBox>
+            <br />
+
+            <!-- ASP.NET TextBox control for password -->
+            <asp:TextBox class="textbox" ID="txtPassword" runat="server" TextMode="Password" placeholder="Enter your password"></asp:TextBox>
             <br />
 
             <a href="#">Forgot email?</a>
@@ -113,7 +117,7 @@
             <div class="actions">
                 <a href="Create.aspx">Create account</a>
                 <!-- ASP.NET Button control for submitting the form -->
-                <asp:Button ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" />
+                <asp:Button class="button" ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" />
             </div>
         </div>
 

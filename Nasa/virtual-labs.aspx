@@ -1,11 +1,100 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="virtual-labs.aspx.cs" Inherits="Nasa.virtual_labs" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
     <style>
+        /* Body Styling */
         body {
+            color: white;
             background: url('Content/backgroundimg_virtuallab.jpg');
-            background-attachment: fixed; /* This will fix the background image */
-            background-size: cover; /* Optional: Cover the entire viewport */
+            background-attachment: fixed;
+            background-size: cover;
             background-position: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Header and Titles */
+        h2 {
+            color: #1a202c;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #2d3748;
+        }
+
+        /* Experiment Boxes */
+        .p-4 {
+            border: 1px solid #e2e8f0;
+            background-color: #f7fafc;
+        }
+
+        .rounded {
+            border-radius: 8px;
+        }
+
+        .shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Buttons */
+        button {
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Inputs */
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            outline: none;
+            transition: background 0.15s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #4299e1;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #3182ce;
+        }
+
+        /* Modal */
+      
+        /* Form Inputs */
+        input[type="text"], input[type="password"] {
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #loginModal .bg-white {
+                width: 90%;
+            }
         }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,7 +103,6 @@
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
     <body class="bg-gray-100 text-gray-900">
 
-       
         <!-- Main Content -->
         <main class="container mx-auto p-4">
             <section class="mb-8">
@@ -49,22 +137,68 @@
             </section>
         </main>
 
-
-
-        <!-- Login Modal -->
-        <div id="loginModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 hidden justify-center items-center">
-            <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
-                <h2 class="text-xl font-bold mb-4">Login/Signup</h2>
-                <form id="loginForm">
-                    <input type="text" placeholder="Email" class="border p-2 w-full mb-4" required />
-                    <input type="password" placeholder="Password" class="border p-2 w-full mb-4" required />
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Login</button>
-                    <button type="button" id="closeModal" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">Close</button>
-                </form>
-            </div>
-        </div>
-
         <!-- JavaScript -->
-        <script src="script.js"></script>
+<script>
+    // Phytoplankton Growth Experiment
+    const sunlightInput = document.getElementById("sunlight");
+    const nutrientInput = document.getElementById("nutrients");
+    const sunlightValue = document.getElementById("sunlightValue");
+    const nutrientValue = document.getElementById("nutrientValue");
+    const phytoplanktonResult = document.getElementById("phytoplanktonResult");
+    const runExperiment = document.getElementById("runExperiment");
+
+    // Update sunlight and nutrient values
+    sunlightInput.addEventListener("input", () => {
+        sunlightValue.textContent = `${sunlightInput.value}%`;
+    });
+    nutrientInput.addEventListener("input", () => {
+        nutrientValue.textContent = `${nutrientInput.value}%`;
+    });
+
+    // Run Phytoplankton Growth Experiment
+    runExperiment.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent page reload
+        const sunlight = sunlightInput.value;
+        const nutrients = nutrientInput.value;
+
+        let growthMessage = "The growth of phytoplankton is ";
+
+        if (sunlight > 70 && nutrients > 70) {
+            growthMessage += "optimal!";
+        } else if (sunlight > 30 && nutrients > 30) {
+            growthMessage += "moderate.";
+        } else {
+            growthMessage += "low.";
+        }
+
+        phytoplanktonResult.textContent = growthMessage; // Display the result
+    });
+
+    // Cloud Formation Experiment
+    const temperatureInput = document.getElementById("temperature");
+    const humidityInput = document.getElementById("humidity");
+    const cloudResult = document.getElementById("cloudResult");
+    const cloudExperiment = document.getElementById("cloudExperiment");
+
+    // Check Cloud Formation
+    cloudExperiment.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent page reload
+        const temperature = temperatureInput.value;
+        const humidity = humidityInput.value;
+
+        let cloudMessage = "Cloud formation is ";
+
+        if (temperature < 0 && humidity > 80) {
+            cloudMessage += "high.";
+        } else if (temperature >= 0 && temperature <= 30 && humidity > 50) {
+            cloudMessage += "possible.";
+        } else {
+            cloudMessage += "unlikely.";
+        }
+
+        cloudResult.textContent = cloudMessage; // Display the result
+    });
+</script>
+
     </body>
 </asp:Content>

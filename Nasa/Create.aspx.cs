@@ -21,6 +21,7 @@ namespace Nasa
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string confirmPassword = txtConfirmPassword.Text;
+            Response.Redirect("Login.aspx");
 
             // Add validation or further processing logic
         }

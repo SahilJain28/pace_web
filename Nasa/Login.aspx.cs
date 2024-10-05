@@ -17,6 +17,14 @@ namespace Nasa
         {
             // Add your logic here
             string emailOrPhone = txtEmailPhone.Text;
+            if(emailOrPhone == "admin@123" || emailOrPhone == "123456789")
+            {
+                Response.Redirect("default.aspx");
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Invalid email or phone number');", true);
+            }
             // Handle login logic
         }
     }

@@ -114,6 +114,7 @@
             display: block;
             width: 100%;
             text-align: center;
+            
         }
         .footer {
             display: flex;
@@ -187,13 +188,7 @@
                     <a href="#">Privacy</a>
                     <a href="#">Terms</a>
                 </div>
-            </div>
-
-            <div class="illustration">
-                <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-OrkuQ2UP9DKUyaj5rC0MxEc2.png" alt="Illustration of a person with Google services icons" />
-                <p>One account. All of Google working for you.</p>
-            </div>
-        </div>
+           
     </form>
 </body>
 </html>

@@ -33,7 +33,7 @@
         }
 
         .header nav a:hover {
-            text-decoration: underline; /* Add underline on hover */
+            text-decoration: underline;
         }
 
         /* Sidebar styles */
@@ -47,11 +47,11 @@
             overflow-x: hidden;
             transition: 0.3s;
             padding-top: 60px;
-            z-index: 1000; /* Ensure sidebar is on top */
+            z-index: 1000;
         }
 
         .sidebar img {
-            width: 150px; /* Image size in the sidebar */
+            width: 150px;
             margin: 0 auto;
             display: block;
             padding-bottom: 20px;
@@ -96,7 +96,7 @@
             font-size: 30px;
             cursor: pointer;
             color: white;
-            margin-right: 10px; /* Space between Hamburger icon and image */
+            margin-right: 10px;
         }
 
         /* Image next to the Hamburger icon */
@@ -114,7 +114,7 @@
             width: 100%;
             position: relative;
             bottom: 0;
-            z-index: 10; /* Lower z-index than sidebar */
+            z-index: 10;
         }
 
         footer a {
@@ -138,7 +138,6 @@
         <header class="header">
             <!-- Hamburger icon and image -->
             <div class="hamburger-container">
-                <!-- Hamburger icon and image -->
                 <span class="hamburger" onclick="openNav()">&#9776;</span>
                 <img src="Content/Logo.png" alt="Icon Image" class="hamburger-img" />
             </div>
@@ -148,19 +147,19 @@
                 <a href="data-visualization.aspx" class="hover:underline cursor-pointer">Data Visualization Tool</a>
                 <a href="virtual-labs.aspx" class="hover:underline cursor-pointer">Virtual Labs</a>
                 <a href="explorer.aspx" class="hover:underline cursor-pointer">Explorer</a>
-                <a href="Login.aspx" class="hover:underline cursor-pointer">Login/Signup</a>
+                <a href="javascript:void(0)" class="hover:underline cursor-pointer" onclick="confirmLogout()">Logout</a> <!-- Logout button -->
             </nav>
         </header>
 
         <!-- Sidebar Section -->
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <img src="Content/Logo.png" alt="Sidebar Image" />
+            <img src="Content/profile-removebg-preview.png" alt="Sidebar Image" />
             <a href="stimulation.aspx" class="hover:underline cursor-pointer">Stimulation</a>
             <a href="data-visualization.aspx">Data Visualization Tool</a>
             <a href="virtual-labs.aspx">Virtual Labs</a>
             <a href="explorer.aspx" class="hover:underline cursor-pointer">Explorer</a>
-            <a href="Login.aspx" class="hover:underline cursor-pointer">Login/Signup</a>
+            <a href="javascript:void(0)" class="hover:underline cursor-pointer" onclick="confirmLogout()">Logout</a> <!-- Logout button in sidebar -->
         </div>
 
         <!-- Main content section -->
@@ -186,6 +185,14 @@
             function closeNav() {
                 document.getElementById("mySidebar").style.width = "0";
                 document.getElementById("main").style.marginLeft = "0";
+            }
+
+            function confirmLogout() {
+                // Create confirmation dialog
+                if (confirm("Are you sure you want to logout?")) {
+                    // If the user clicks "Yes", redirect to the login page
+                    window.location.href = "Login.aspx";
+                }
             }
         </script>
     </form>
