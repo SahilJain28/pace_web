@@ -11,61 +11,43 @@ namespace Nasa
 {
 
 
-    public partial class _default
+    public partial class stimulation
     {
 
         /// <summary>
-        /// LearnMoreButton control.
+        /// btnSimulation1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LearnMoreButton;
+        protected global::System.Web.UI.WebControls.Button btnSimulation1;
 
         /// <summary>
-        /// DataSetLearnMoreButton control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DataSetLearnMoreButton;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// EducationVideoLink control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink EducationVideoLink;
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// WatchVideoButton control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button WatchVideoButton;
-
-        /// <summary>
-        /// ExploreButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ExploreButton;
-
-        /// <summary>
-        /// MoreNewsButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MoreNewsButton;
+        protected global::System.Web.UI.WebControls.Button Button3;
     }
 }

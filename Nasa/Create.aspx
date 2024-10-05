@@ -10,6 +10,10 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #fff;
+            background: url('Content/bg_login.jpeg');
+            background-attachment: fixed; /* This will fix the background image */
+            background-size: cover; /* Optional: Cover the entire viewport */
+            background-position: center;
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,6 +23,7 @@
         }
         .container {
             border: 1px solid #ddd;
+            background-color: #fff;
             border-radius: 8px;
             padding: 40px;
             max-width: 450px;

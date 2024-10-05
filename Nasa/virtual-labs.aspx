@@ -1,28 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="virtual-labs.aspx.cs" Inherits="Nasa.virtual_labs" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: url('Content/backgroundimg_virtuallab.jpg');
+            background-attachment: fixed; /* This will fix the background image */
+            background-size: cover; /* Optional: Cover the entire viewport */
+            background-position: center;
+        }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </asp:Content>
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
     <body class="bg-gray-100 text-gray-900">
 
-        <!-- Header Section -->
-        <header class="bg-blue-800 text-white p-4">
-            <div class="container mx-auto flex justify-between items-center">
-                <h1 class="text-3xl font-bold">NASA PACE Explorer</h1>
-                <nav>
-                    <ul class="flex space-x-4">
-                        <li><a href="index.aspx" class="hover:underline">Home</a></li>
-                        <li><a href="data-visualization.aspx" class="hover:underline">Data Visualization Tool</a></li>
-                        <li><a href="virtual-labs.aspx" class="hover:underline">Virtual Labs</a></li>
-                        <li><a href="explorer.aspx" class="hover:underline">Explorer</a></li>
-                        <li><a href="#loginModal" class="hover:underline cursor-pointer">Login/Signup</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
+       
         <!-- Main Content -->
         <main class="container mx-auto p-4">
             <section class="mb-8">

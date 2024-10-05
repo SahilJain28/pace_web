@@ -102,22 +102,7 @@
 </asp:Content>
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
-    <!-- Header Section -->
-    <header class="bg-blue-800 text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold">NASA PACE Explorer</h1>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="Default.aspx" class="hover:underline">Home</a></li>
-                    <li><a href="DataVisualization.aspx" class="hover:underline">Data Visualization Tool</a></li>
-                    <li><a href="VirtualLabs.aspx" class="hover:underline">Virtual Labs</a></li>
-                    <li><a href="Explorer.aspx" class="hover:underline">Explorer</a></li>
-                    <li><a href="#loginModal" class="hover:underline cursor-pointer" id="openLoginModal">Login/Signup</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+   
     <!-- Main Content -->
     <main class="container mx-auto p-4">
         <section class="mb-8">

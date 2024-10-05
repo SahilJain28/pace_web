@@ -47,6 +47,7 @@
             overflow-x: hidden;
             transition: 0.3s;
             padding-top: 60px;
+            z-index: 1000; /* Ensure sidebar is on top */
         }
 
         .sidebar img {
@@ -110,9 +111,10 @@
             color: white;
             padding: 20px 0;
             text-align: center;
+            width: 100%;
             position: relative;
             bottom: 0;
-            width: 100%;
+            z-index: 10; /* Lower z-index than sidebar */
         }
 
         footer a {
@@ -142,6 +144,7 @@
             </div>
             <nav>
                 <a href="Default.aspx" class="hover:underline cursor-pointer">Home</a>
+                <a href="stimulation.aspx" class="hover:underline cursor-pointer">Stimulation</a>
                 <a href="data-visualization.aspx" class="hover:underline cursor-pointer">Data Visualization Tool</a>
                 <a href="virtual-labs.aspx" class="hover:underline cursor-pointer">Virtual Labs</a>
                 <a href="explorer.aspx" class="hover:underline cursor-pointer">Explorer</a>
@@ -153,6 +156,7 @@
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <img src="Content/Logo.png" alt="Sidebar Image" />
+            <a href="stimulation.aspx" class="hover:underline cursor-pointer">Stimulation</a>
             <a href="data-visualization.aspx">Data Visualization Tool</a>
             <a href="virtual-labs.aspx">Virtual Labs</a>
             <a href="explorer.aspx" class="hover:underline cursor-pointer">Explorer</a>

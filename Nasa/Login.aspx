@@ -12,6 +12,10 @@
             font-family: 'Roboto', sans-serif;
             background-color: #f2f6fc;
             display: flex;
+            background: url('Content/bg_login.jpeg');
+            background-attachment: fixed; /* This will fix the background image */
+            background-size: cover; /* Optional: Cover the entire viewport */
+            background-position: center;
             justify-content: center;
             align-items: center;
             height: 100vh;
